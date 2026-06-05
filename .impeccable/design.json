@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-05T17:07:00Z",
+  "title": "Design System: Ultron CLI",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Neon Green",
+        "canonical": "ansi(32)",
+        "tonalRamp": []
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Cyan",
+        "canonical": "ansi(36)",
+        "tonalRamp": []
+      },
+      "accent": {
+        "role": "accent",
+        "displayName": "Neon Pink",
+        "canonical": "ansi(35)",
+        "tonalRamp": []
+      },
+      "neutral": {
+        "role": "neutral",
+        "displayName": "Soft Silver",
+        "canonical": "ansi(37)",
+        "tonalRamp": []
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display ASCII",
+        "purpose": "Branding ASCII headings"
+      },
+      "body": {
+        "displayName": "Monospace Text",
+        "purpose": "Help texts and instructions"
+      }
+    }
+  },
+  "components": [],
+  "narrative": {
+    "northStar": "The Cybernetic Codex Grid",
+    "overview": "Ultron CLI is designed to evoke the feeling of a futuristic, high-performance hacking terminal. It rejects the generic grey/white plain text of traditional UNIX tools in favor of a vibrant, cyberpunk-styled dashboard that feels alive and highly engineered, while maintaining near-zero shell startup latency.",
+    "keyCharacteristics": [
+      "Vibrant Cyberpunk Contrast: Neon green, cyan, and pink highlight key interface states.",
+      "Micro-Animated Transitions: Smooth, high-performance loading spinners for asynchronous symlink operations.",
+      "Strict POSIX Segregation: Pure shell commands output to stdout; all design aesthetics and statuses reside in stderr."
+    ],
+    "rules": [
+      {
+        "name": "The 10% Color Accent Rule",
+        "body": "Neon colors (Green/Cyan/Pink) must never occupy more than 10% of the terminal line space.",
+        "section": "colors"
+      },
+      {
+        "name": "The Box-drawing Border Rule",
+        "body": "Use single-line Unicode box-drawing characters for structural tables, and avoid mixing ASCII and Unicode borders on the same screen.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do route all styled text, spinners, emojis, and status messages to stderr (console.error).",
+      "Do route raw variables, exports, and command strings directly to stdout (console.log) for shell eval parsing.",
+      "Do strip ANSI escape codes automatically when running in non-TTY environments.",
+      "Do output clean, standard ANSI color codes that adapt naturally to light and dark terminal themes."
+    ],
+    "donts": [
+      "Don't output any human-readable status, emoji, or styling to stdout.",
+      "Don't block interactive terminal loops inside processes.",
+      "Don't use slow loading scripts or dependencies that raise CLI execution time above 50ms.",
+      "Don't use hardcoded background colors that could clash with the user's terminal background theme."
+    ]
+  }
+}
