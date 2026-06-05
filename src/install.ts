@@ -47,7 +47,16 @@ codex() {
     fi
 }
 ultron() {
+    local ABRIR=false
+    for arg in "$@"; do
+        if [ "$arg" = "-o" ] || [ "$arg" = "--open" ]; then
+            ABRIR=true
+        fi
+    done
     eval "$(${targetBinary} "$@")"
+    if [ "$ABRIR" = true ] && [ -n "$ULTRON_CODEX_HOME" ]; then
+        codex
+    fi
 }
 # <<< ultron-cli wrapper <<<`;
 

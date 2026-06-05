@@ -163,24 +163,6 @@ function main() {
   // Output environment configuration to stdout for the shell eval
   console.log(`export ULTRON_CODEX_HOME="${targetDir}"`);
   console.error(`✅ Ambiente '${profile}' configurado para uso simultâneo e isolado!`);
-
-  if (openCodex) {
-    console.error("🚀 Iniciando o Codex...");
-    
-    // Spawn codex with the new HOME set to targetDir
-    const result = spawnSync("codex", [], {
-      env: {
-        ...process.env,
-        HOME: targetDir
-      },
-      stdio: "inherit"
-    });
-
-    if (result.error) {
-      console.error(`Erro ao iniciar o Codex: ${result.error.message}`);
-      process.exit(1);
-    }
-  }
 }
 
 main();
