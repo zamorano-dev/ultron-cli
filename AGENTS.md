@@ -25,7 +25,7 @@ Sempre utilize os seguintes comandos para construir e testar a aplicação:
 
 ## 🏗️ Padrões de Código e Arquitetura
 
-Qualquer agente trabalhando nesta base de código deve respeitar as seguintes diretrizes:
+Qualquer agente trabalhando nesta base de código deve respeitar as seguintes diretrizes, além de seguir estritamente o guia de [code-standards.md](file:///Users/brunozamorano/projects/ultron-cli/.rules/code-standards.md):
 
 ### 1. Comunicação com o Terminal (Padrão POSIX)
 *   **Stdout (`console.log`)**: Reservado **exclusivamente** para comandos avaliáveis pelo shell (ex: `export ULTRON_CODEX_HOME="..."` ou `unset ULTRON_CODEX_HOME`). Qualquer outro texto aqui quebrará a integração com o shell.
@@ -45,6 +45,7 @@ Ao criar novos perfis, siga rigorosamente a separação de recursos:
 ---
 
 ## 📂 Estrutura de Arquivos Importante
+*   [code-standards.md](file:///Users/brunozamorano/projects/ultron-cli/.rules/code-standards.md): Diretrizes e padrões de desenvolvimento da base de código.
 *   [src/index.ts](file:///Users/brunozamorano/projects/ultron-cli/src/index.ts): Código principal da CLI (parsing e lógica de symlink).
 *   [src/install.ts](file:///Users/brunozamorano/projects/ultron-cli/src/install.ts): Script de compilação e integração com a shell configuration do usuário.
 *   [tsconfig.json](file:///Users/brunozamorano/projects/ultron-cli/tsconfig.json): Definições do compilador Bun.

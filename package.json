@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "bun run src/index.ts",
-    "build": "bun build --compile --outfile bin/ultron-cli src/index.ts",
+    "build": "bun build --compile --outfile bin/ultron-cli src/index.ts && codesign --force --sign - bin/ultron-cli",
     "install": "bun run src/install.ts",
     "test": "bun test"
   },
