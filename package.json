@@ -1,0 +1,17 @@
+{
+  "name": "ultron-cli",
+  "version": "1.0.0",
+  "description": "Multi-profile manager for Codex and other dev environments",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "build": "bun build --compile --outfile bin/ultron-cli src/index.ts",
+    "install": "bun run src/install.ts",
+    "test": "bun test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
+}
